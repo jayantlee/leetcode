@@ -7,15 +7,15 @@
  */
 export default function twoSum(nums, target) {
   const numMap = {};
-  let r = [];
   for (let i = 0; i < nums.length; i++) {
     if (numMap[nums[i]] != null) {
-      r = [numMap[nums[i]], i];
-      break;
+      return [numMap[nums[i]], i];
     } else {
       numMap[target - nums[i]] = i;
     }
   }
-
-  return r;
 }
+
+/**
+ * 1. 利用map存储所需要配对的值： key为需要配对的值，value为当前值的索引
+ */
